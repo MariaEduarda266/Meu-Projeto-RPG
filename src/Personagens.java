@@ -1,26 +1,42 @@
 import java.util.Scanner;
 
     public class Personagens {
+        Scanner leitor = new Scanner(System.in);
 
-        public String nome;
-        public String genero;
+        private String Backstore;
+        private String nome;
+        private String genero;
         private int idade;
         private double altura;
-        private int vidaAtual;
-        private int vidaMaxima = 100;
+                // Getters e Setters
+        public String getBackstore() {
+            return this.Backstore;
+        }
+        public String getGenero() {
+            return this.genero;
+        }
+        public String getNome() {
+            return this.nome;
 
-
+        }
         public int getIdade() {
             return this.idade;
         }
-
         public double getAltura() {
             return altura;
         }
 
-
+        public void setGenero(String genero) {
+            this.genero = genero;
+        }
+        public void setBackstore(String backstore) {
+            this.Backstore = backstore;
+        } // colocar a história de início
+        public void setNome(String nome) {
+            this.nome = (nome != null && !nome.trim().isEmpty()) ? nome : "Desconhecido";
+        }
         public void setIdade(int novaIdade) {
-            if (idade > 60) {
+            if (novaIdade > 60) {
                 System.out.println("AVISO!! IDADE MÁXIMA PERMITIDA É 60");
                 System.out.println("Ajustando idade para 60 automaticamente...");
                 this.idade = 60;
@@ -33,7 +49,6 @@ import java.util.Scanner;
 
             }
         }
-
         public void setAltura(double novaAltura) {
             if (altura > 2d) {
                 System.out.println("AVISO!! ALTURA MÁXIMA PERMITIDA É 2 METROS");
@@ -48,42 +63,48 @@ import java.util.Scanner;
             }
 
         }
-
-
-        void status() {
-            System.out.println("// --- ESCOLHA SEU PERSONAGEM --- //");
-            Scanner leitor = new Scanner(System.in);
-            String r = "";
+        // criar personagens
+        public void criarPersonagem(){
+            String confirmacao = "";
 
 
             do {
-                System.out.print("Qual seu nome? ");
-                nome = leitor.nextLine();
-                System.out.print("Quantos anos você tem? (Máximo 60)");
-                int valorDigitado = leitor.nextInt();
-                leitor.nextLine();
-                this.setIdade(valorDigitado);
-                System.out.print("Qual seu gênero? ");
-                genero = leitor.nextLine();
-                System.out.print("Qual sua altura? ");
-                altura = leitor.nextDouble();
-                leitor.nextLine();
-                ServicosGerais.limpatela();
-                System.out.println("Bom te conhecer " + nome);
-                System.out.println("Pronto(a) para começar o jogo? (SIM/NÃO)\nCaso você ainda não esteja pronta e digitar NÃO, iremos reiniciar sua ficha.");
-                r = leitor.nextLine();
+            // ajustar um serviços gerais e colocar aqui, com 50. esse serviços gerais vai limpar a tela do backlog, e deixar para organizar o codigo certinho
+                System.out.println(" CRIAÇÃO DO SEU PERSONAGEM ");
+                System.out.println("Qual seu nome? ");
+                this.setNome(leitor.nextLine());
+                System.out.println("Quantos anos você tem? (18-60) ");
+                this.setIdade(leitor.nextInt()); //  ver como concertar isso dps com next.line
+                System.out.println("Qual seu gênero? ");
+                this.setGenero(leitor.nextLine());
+                System.out.println("Qual sua altura? ");
+                this.setAltura(leitor.nextDouble());
 
-                if(!r.equalsIgnoreCase("Sim")){
-                    System.out.println("Reiniciando a ficha...");
+                // colocar mais um limpa tela aqui
+                this.exibirficha();
+
+                System.out.println("Está tudo certo? (SIM/NÃO)");
+                confirmacao = leitor.nextLine().toUpperCase();
+
+                if (!confirmacao.equals("SIM")) {
+                    System.out.println("Reiniciando a criação da ficha");
+                    // limpa tela 2
                 }
-                ServicosGerais.limpatela();
 
-            } while (!r.equalsIgnoreCase("Sim"));
-            System.out.println("Começando o jogo...");
+            } while (!confirmacao.equals("SIM"));
 
+
+            System.out.println("Seja bem-vindo(a)" + this.nome);
         }
+        public void exibirficha (){
 
-
+            System.out.println("Sua ficha pessoal:");
+            System.out.println("👤 INFORMAÇÕES PESSOAIS:");
+            System.out.println("   ├─ Nome: " + this.nome);
+            System.out.println("   ├─ Gênero: " + this.genero);
+            System.out.println("   ├─ Idade: " + this.idade + " anos");
+            System.out.println("   └─ Altura: " + String.format("%.2f", this.altura) + "m");
+        }
     }
 
 
