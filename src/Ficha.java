@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
-public class Ficha {
+public class Ficha { // Herança ficha para herdar pericias
 
     int forca, destreza, constituicao, inteligencia, sabedoria, carisma, sorte;
     public ArrayList<String> inventario = new ArrayList<>();
