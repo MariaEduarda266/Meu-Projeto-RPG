@@ -39,7 +39,6 @@ public class Ficha { // Herança ficha para herdar pericias
         System.out.println("Rolando dados para seus atributos...");
         this.gerarAtributosAleatorios();
         this.mostrarFicha();
-        ServicosGerais.limpatela();
     }
     //MOCHILA
     public void adicionarItem (String item){

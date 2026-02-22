@@ -24,7 +24,7 @@ public class Narracao {
             resposta = leitor.nextLine();
             if (resposta.equalsIgnoreCase("Não") || resposta.equalsIgnoreCase("Nao")) {
                 System.out.println("Começando o jogo...");
-                ServicosGerais.esperar(1);
+                Utilis.esperar(1);
             } else {
 
             }
@@ -45,20 +45,20 @@ public class Narracao {
 
                 System.out.println("Começando o jogo...");
 
-                ServicosGerais.limpatela();
+
 
             }
-            ServicosGerais.limparTela();
+            Utilis.limparTela();
         }
     }
 
     // ATO 1
     public void ato1(Ficha Personagem){
-        ServicosGerais.limpatela();
+
         this.narrarIntroducaodamansao();
-        ServicosGerais.limpatela();
+
         this.escolhadojogador();
-        ServicosGerais.limpatela();
+
         this.processarEscolhaAto1(fichajogador);
 
         String e07 = ("""
@@ -70,13 +70,13 @@ public class Narracao {
                 Assim como o chão, o sofá está muito empoeirado, e se não fosse por isso você até ficaria naquele hall, mas com a possibilidade de encontrar um lugar maior, você apenas segue para um caminho…
                 
                 """);
-        ServicosGerais.digitar(e07);
+        Utilis.digitar(e07);
         leitor.nextLine();
 
     }
 
    public void narrarIntroducaodamansao() {
-                ServicosGerais.limparTela();
+                Utilis.limparTela();
                 String textoIntroducao = """
                          Você voltava de uma viagem noturna depois de uma festa em outra cidade com seus amigos.
                         A estrada era antiga, cercada por árvores retorcidas e neblina espessa.
@@ -90,7 +90,7 @@ public class Narracao {
                         Está escuro, e seu motor simplesmente não quer funcionar, a única opção que você enxerga nesse momento é entrar na casa.
                         Você vê a porta e a janela, ambas muito próximas, porém ambas lhe chamam a atenção
                         """;
-                    ServicosGerais.digitar(textoIntroducao);
+                    Utilis.digitar(textoIntroducao);
 
             }
 
@@ -101,7 +101,7 @@ public class Narracao {
                         2.Vai diretamente até a porta
                         3.Vai até a janela, que está entreaberta
                         """);
-                ServicosGerais.digitar(escolha01);
+                Utilis.digitar(escolha01);
                 escolha = leitor.nextInt();
                 leitor.nextLine();
 
@@ -119,7 +119,7 @@ public class Narracao {
                                     (VOLTAR/CONTINUAR)
                                     """);
 
-                            ServicosGerais.digitar(e02);
+                            Utilis.digitar(e02);
                             e = leitor.nextLine();
                             System.out.println(e);
 
@@ -130,7 +130,7 @@ public class Narracao {
                                         \nUm corredor entre a casa e a floresta
                                         """);
 
-                                ServicosGerais.digitar(e03);
+                                Utilis.digitar(e03);
                                 leitor.nextLine();
 
                             } else if (e.equalsIgnoreCase("Continuar")) {
@@ -140,11 +140,10 @@ public class Narracao {
                                         devido a baixa visão
                                         """);
 
-                                ServicosGerais.digitar(e04);
+                                Utilis.digitar(e04);
 
                                 System.out.println("★ GIRE 1d20 + Sorte ★ ");
                                 leitor.nextLine();
-                                ServicosGerais.limpatela();
                                 total = valorDado + Personagem.sorte;
                                 System.out.println(total);
                                 if (total < 10) {
@@ -154,7 +153,7 @@ public class Narracao {
                                             Sua única opção neste momento é retornar
                                             """);
 
-                                    ServicosGerais.digitar(e05);
+                                    Utilis.digitar(e05);
                                 } else {
                                     System.out.println("""
                                             Sucesso!! \nObservando bem o portão, você encontra no chão uma chave dourada e enferrujada.
@@ -197,7 +196,7 @@ public class Narracao {
                                     Ela não é muito alta, mas é o suficiente para que você consiga passar. 
                                     Quando você anda até a janela, seus pés se inclinam e você apenas se joga para dentro, caindo em cima de um sofá velho mas muito bem conservado.
                                     """);
-                            ServicosGerais.digitar(e06);
+                            Utilis.digitar(e06);
                             leitor.nextLine();
 
                         }//Janela -- Testar
@@ -220,7 +219,7 @@ public class Narracao {
                 Ao chegar ao segundo andar, ela encontra um hall amplo, iluminado por uma única janela no fundo, coberta por uma cortina fina amarelada pelo tempo. 
                 A luz que entra é fraca, quase doente, e você se pergunta como aquela iluminação existe, já que lá fora está tudo escuro.
                 """);
-        ServicosGerais.digitar(textoato2);
+        Utilis.digitar(textoato2);
         leitor.nextLine();
 
         String a02 = ("""
@@ -229,7 +228,7 @@ public class Narracao {
                 O casal, uma mulher loira de cabelo curto e olhos azuis, com um sorriso radiante, e um homem de cabelo preto e olhos azuis, mais sério, parecem bem felizes. 
                 O que será que aconteceu para a casa estar em tão péssima condição?
                 """);
-        ServicosGerais.digitar(a02);
+        Utilis.digitar(a02);
         leitor.nextLine();
 
         String a03 = ("""
@@ -238,7 +237,7 @@ public class Narracao {
                 O casal feliz aparentemente teve filhos, mas seus rostos estão parcialmente rasgados, o que faz com que seu coração acelere um pouco.
                 
                 """);
-        ServicosGerais.digitar(a03);
+        Utilis.digitar(a03);
         leitor.nextLine();
 
         String a04 = ("""
@@ -251,7 +250,7 @@ public class Narracao {
                 (ABRIR)
                 
                 """);
-        ServicosGerais.digitar(a04);
+        Utilis.digitar(a04);
         resposta = leitor.nextLine();
 
             if(resposta.equalsIgnoreCase("Abrir")){
@@ -261,15 +260,14 @@ public class Narracao {
                         Os lençois estão mais limpos que o normal, e aquele quarto lhe causa uma estranha sensação de segurança. 
                         Dentro do quarto, você percebe alguns objetos que te chamam a atenção:
                         """);
-                ServicosGerais.limpatela();
-                ServicosGerais.digitar(quarto);
+                Utilis.digitar(quarto);
                 String objetos = ("""
                         1.Criado mudo
                         2.Casaco
                         3.Penteadeira
                         4.Cama - Dormir
                         """);
-                ServicosGerais.digitar(objetos);
+                Utilis.digitar(objetos);
             }
 
         System.out.println("Digite o número para investigar, ou ir dormir:");
@@ -313,7 +311,7 @@ public class Narracao {
                 As pinturas aparentam estar rasgadas com garras bem pequenas, e algumas das pinturas que pareciam estar na noite anterior já não estão mais.
                 
                 """);
-        ServicosGerais.digitar(a01);
+        Utilis.digitar(a01);
         leitor.nextLine();
 
         System.out.println("""

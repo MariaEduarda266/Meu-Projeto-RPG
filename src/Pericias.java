@@ -14,7 +14,6 @@ public class Pericias {
         System.out.println("Diplomacia - \nEnganação - \nHistória - \nIntimidação - \nMedicina - \nReligião - ");
         System.out.println("Está vazia, vamos configurar. Selecione os numeros abaixo e os coloque" +
                 " em ordem, os separando em sua ficha");
-        ServicosGerais.limpatela();
 
     }
 
@@ -80,7 +79,6 @@ public class Pericias {
         this.distribuirAtributos(leitor);
         System.out.println("Certo, essa sua ficha:");
         this.mostrarPericias();
-        ServicosGerais.limpatela();
     }
 
     public void mostrarPericias() {

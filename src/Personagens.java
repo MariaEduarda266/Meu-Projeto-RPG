@@ -122,7 +122,7 @@ import java.util.Scanner;
         }
 
         public void gerarBackstory (){
-            String [] backstrories = {
+            String [] backstories = {
                     "Você voltava de uma viagem noturna depois de uma festa em outra cidade com seus amigos, porém somente você voltou. " +
                             "A estrada era antiga, cercada por árvores retorcidas e neblina espessa.",
                     "Uma chuva leve caia fraca, e depois simplesmente desapareceu. " +
@@ -134,12 +134,14 @@ import java.util.Scanner;
                             "Está escuro, e seu motor simplesmente não quer funcionar, a única opção que você enxerga nesse momento é entrar na casa…",
                     "Você vê a porta e a janela, ambas muito próximas, porém ambas lhe chamam a atenção…"
             };
-
-            int indice = (int) (Math.random() * backstrories.length);
-            this.Backstore = backstrories[indice];
-
             System.out.println("Começando...");
-            System.out.println(this.Backstore + "\n");
+
+            for (int i = 0; i < backstories.length; i++) {
+                System.out.println(backstories[i]);
+            }
+            this.Backstore = String.join("\n", backstories);
+        }
+
         } // usar depois no main
 
-    }
+
