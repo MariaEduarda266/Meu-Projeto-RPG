@@ -15,36 +15,29 @@ import java.util.Scanner;
         public String getBackstore() {
             return this.Backstore;
         }
-
         public String getGenero() {
             return this.genero;
         }
-
         public String getNome() {
             return this.nome;
 
         }
-
         public int getIdade() {
             return this.idade;
         }
-
         public double getAltura() {
             return altura;
         }
 
+        public void setBackstore(String backstore) {
+            this.Backstore = backstore;
+        } // usar no main ainda
         public void setGenero(String genero) {
             this.genero = genero;
         }
-
-        public void setBackstore(String backstore) {
-            this.Backstore = backstore;
-        } // colocar a história de início
-
         public void setNome(String nome) {
             this.nome = (nome != null && !nome.trim().isEmpty()) ? nome : "Desconhecido";
         }
-
         public void setIdade(int novaIdade) {
             if (novaIdade > 60) {
                 System.out.println("AVISO!! IDADE MÁXIMA PERMITIDA É 60");
@@ -59,7 +52,6 @@ import java.util.Scanner;
 
             }
         }
-
         public void setAltura(double novaAltura) {
             if (novaAltura > 2d) {
                 System.out.println("AVISO!! ALTURA MÁXIMA PERMITIDA É 2 METROS");
@@ -81,7 +73,7 @@ import java.util.Scanner;
 
 
             do {
-                // ajustar um serviços gerais e colocar aqui, com 50. esse serviços gerais vai limpar a tela do backlog, e deixar para organizar o codigo certinho
+                Utilis.limparTela(50);
                 System.out.println(" CRIAÇÃO DO SEU PERSONAGEM ");
                 System.out.println("Qual seu nome? ");
                 this.setNome(leitor.nextLine());
@@ -94,7 +86,7 @@ import java.util.Scanner;
                 this.setAltura(leitor.nextDouble());
                 leitor.nextLine();
 
-                // colocar mais um limpa tela aqui
+                Utilis.limparTela(10);
                 this.exibirficha();
 
                 System.out.println("Está tudo certo? (SIM/NÃO)");
@@ -123,18 +115,18 @@ import java.util.Scanner;
 
         public void gerarBackstory (){
             String [] backstories = {
-                    "Você voltava de uma viagem noturna depois de uma festa em outra cidade com seus amigos, porém somente você voltou. " +
-                            "A estrada era antiga, cercada por árvores retorcidas e neblina espessa.",
-                    "Uma chuva leve caia fraca, e depois simplesmente desapareceu. " +
-                            "Quando você percebeu, seu motor parou, e seu coração começou a acelerar. " +
-                            "Você para em frente a uma mansão aparentemente abandonada, e seu corpo se estremece ao perceber sua imensidão.",
-                    "A Mansão Holloway.",
-                    "Você não se lembra de ter visto aquela casa em seu GPS, e quando estava indo para festa, também não tinha percebido sua presença tão marcante. " +
-                            "Somente agora, você pensa o quanto essa casa parece oportuna naquele momento. " +
-                            "Está escuro, e seu motor simplesmente não quer funcionar, a única opção que você enxerga nesse momento é entrar na casa…",
-                    "Você vê a porta e a janela, ambas muito próximas, porém ambas lhe chamam a atenção…"
+                    "Você voltava de uma viagem noturna depois de uma festa em outra cidade com seus amigos, porém somente você voltou.\n " +
+                            "A estrada era antiga, cercada por árvores retorcidas e neblina espessa.\n",
+                    "Uma chuva leve caia fraca, e depois simplesmente desapareceu.\n " +
+                            "Quando você percebeu, seu motor parou, e seu coração começou a acelerar. \n" +
+                            "Você para em frente a uma mansão aparentemente abandonada, e seu corpo se estremece ao perceber sua imensidão.\n",
+                    "A Mansão Holloway.\n",
+                    "Você não se lembra de ter visto aquela casa em seu GPS, e quando estava indo para festa, também não tinha percebido sua presença tão marcante.\n " +
+                            "Somente agora, você pensa o quanto essa casa parece oportuna naquele momento.\n " +
+                            "Está escuro, e seu motor simplesmente não quer funcionar, a única opção que você enxerga nesse momento é entrar na casa…\n",
+                    "Você vê a porta e a janela, ambas muito próximas, porém ambas lhe chamam a atenção…\n" +
+                            "Como você tenta entrar?"
             };
-            System.out.println("Começando...");
 
             for (int i = 0; i < backstories.length; i++) {
                 System.out.println(backstories[i]);

@@ -2,7 +2,7 @@ public class Utilis {
 
 
     private static final int LINHAS_TELA_COMPLETA = 50;
-    private static final int LINHAS_ESPACO_PEQUENO = 2;
+    private static final int LINHAS_ESPACO_PEQUENO = 1;
 
 
     public static void limparTela() {
@@ -19,7 +19,7 @@ public class Utilis {
     }
     public static void espaco (int linhas){
         limparTela(linhas);
-    }
+    }// pular linhas
 
     public static void esperar(int segundos) {
         try {
@@ -28,7 +28,7 @@ public class Utilis {
             System.out.println("Erro na pausa...");
             Thread.currentThread().interrupt();
         }
-    }
+    } // esperar segundos antes de começar a escrever
 
     public static void digitar(String mensagem, int velocidade) {
         if (mensagem == null || mensagem.isEmpty()) {
@@ -47,7 +47,7 @@ public class Utilis {
         }
     }
         System.out.println();
-    }
+    } // escrever o texto por aqui
 
 }
 

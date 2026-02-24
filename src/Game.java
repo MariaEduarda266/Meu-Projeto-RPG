@@ -1,22 +1,18 @@
 import java.util.Scanner;
 
 public class Game {
+    static void main(String[] args) {
+        Personagens jogador = new Personagens();
+        gerenciarNarrativa narrativa = new gerenciarNarrativa();
 
-    public static void main(String[] args) {
+        //nomealeatorio.criarPersonagem(); // cria o personagem
+        //jogador.criarPersonagem();
+        //narrativa.comecarJogo(); // pergunta se tudo ok para começar
+        //jogador.gerarBackstory(); // começa a passar a backstory
+        narrativa.executar(jogador);
 
-        Personagens p1 = new Personagens();
-        Ficha f = new Ficha();
-        Pericias p = new Pericias();
-        Scanner leitor = new Scanner(System.in);
-        Narracao texto = new Narracao();
-
-
-        p1.status();
-        f.manipularFicha();
-        p.periciasjogador();
-        texto.tudoPronto();
-
-        texto.ato1(f);
-
-    }}
-
+    }
+}
+// depois, no final, verificar se todos os comandos de ENTER estão funcionando (comando para somente ir caso der enter)
+// depois colocar mais escolhas para o personagem principal ir adicionando
+//
