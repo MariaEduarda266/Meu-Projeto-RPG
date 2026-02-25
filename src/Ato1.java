@@ -18,7 +18,7 @@ public class Ato1 {
     public void escolhaJogador (){
         String textoMenu = """
                 O que você faz?
-                1. Dá uma inspecionada no local
+                1.Dá uma inspecionada no local
                 2.Vai diretamente até a porta
                 3.Vai até a janela, que está entreaberta
                 """;

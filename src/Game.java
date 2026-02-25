@@ -4,15 +4,14 @@ public class Game {
     static void main(String[] args) {
         Personagens jogador = new Personagens();
         gerenciarNarrativa narrativa = new gerenciarNarrativa();
+        Final final0 = new Final();
 
-        //nomealeatorio.criarPersonagem(); // cria o personagem
-        //jogador.criarPersonagem();
-        //narrativa.comecarJogo(); // pergunta se tudo ok para começar
-        //jogador.gerarBackstory(); // começa a passar a backstory
+        jogador.criarPersonagem();
+        narrativa.comecarJogo();
+        jogador.gerarBackstory();
         narrativa.executar(jogador);
+        final0.executarFinal();
+        narrativa.finalizarJogo();
 
     }
 }
-// depois, no final, verificar se todos os comandos de ENTER estão funcionando (comando para somente ir caso der enter)
-// depois colocar mais escolhas para o personagem principal ir adicionando
-//

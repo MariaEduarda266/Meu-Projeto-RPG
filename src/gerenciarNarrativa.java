@@ -4,20 +4,22 @@ public class gerenciarNarrativa {
 
     Scanner leitor = new Scanner(System.in);
     Personagens jogador;
-    Personagens personagem = new Personagens(); // mudar nome temporário
+    Personagens personagem = new Personagens();
     Ato1 ato1;
-
+    Ato2 ato2;
+    Ato3 ato3;
     protected String resposta;
-
-// construtor
 
     public void executar (Personagens jogador) {
         this.jogador = jogador;
         this.ato1 = new Ato1(jogador,leitor);
-
+        this.ato2 = new Ato2(jogador,leitor);
+        this.ato3 = new Ato3(jogador, leitor);
         ato1.executar();
+        ato2.executar();
+        ato3.executar();
 
-    } // continuar configurando, depois colocar Personagens Jogador aqui dentro
+    }
 
 
     public void comecarJogo() {

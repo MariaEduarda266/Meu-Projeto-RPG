@@ -33,7 +33,7 @@ import java.util.Scanner;
             this.Backstore = backstore;
         } // usar no main ainda
         public void setGenero(String genero) {
-            this.genero = genero;
+            this.genero = genero.trim().toUpperCase();
         }
         public void setNome(String nome) {
             this.nome = (nome != null && !nome.trim().isEmpty()) ? nome : "Desconhecido";
@@ -80,7 +80,7 @@ import java.util.Scanner;
                 System.out.println("Quantos anos você tem? (18-60) ");
                 this.setIdade(leitor.nextInt());
                 leitor.nextLine();
-                System.out.println("Qual seu gênero? ");
+                System.out.println("Qual seu gênero? (Feminino/Masculino) ");
                 this.setGenero(leitor.nextLine());
                 System.out.println("Qual sua altura? ");
                 this.setAltura(leitor.nextDouble());
